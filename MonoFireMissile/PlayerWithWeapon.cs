@@ -71,15 +71,18 @@ namespace AnimatedSprite
             // check for site change
             
             Site.Update(gameTime);
-            // Whenever the rocket is still and loaded it follows the player posiion
-            if (MyProjectile != null && MyProjectile.ProjectileState == Projectile.PROJECTILE_STATE.STILL)
-                MyProjectile.position = this.CentrePos;
+            
+        
             // if a roecket is loaded
-            if (MyProjectile != null)
+            if (MyProjectile != null && MyProjectile.ProjectileState == Projectile.PROJECTILE_STATE.STILL)
             {
+                // if the rocket is still it follows the player and stays invisible
+                
                 // fire the rocket and it looks for the target
-                if(Keyboard.GetState().IsKeyDown(Keys.Space))
+                if (Keyboard.GetState().IsKeyDown(Keys.Space))
+                {
                     MyProjectile.fire(Site.position);
+                }
             }
 
             // Make sure the player stays in the bounds see previous lab for details
