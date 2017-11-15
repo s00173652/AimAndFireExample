@@ -8,8 +8,19 @@ using Microsoft.Xna.Framework;
 
 namespace AnimatedSprite
 {
-    class Sentry
+    class Sentry : Sprite
     {
+        protected Game myGame;
+        private Projectile crossbowProjectile;
 
+        public override void Update(GameTime gameTime)
+        {
+
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+
+        }
     }
 }
